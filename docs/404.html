@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    (function () {
+      const prefix = '/AuthSample';
+      const currentPath = location.pathname + location.search + location.hash;
+
+      // Redirect only if we're not already at index.html
+      if (!location.pathname.includes('/index.html')) {
+        const target = `${prefix}/index.html${location.search}${location.hash}`;
+        window.location.replace(target);
+      } else {
+        document.body.innerHTML = '<p>Unable to redirect: Please check route setup in Angular</p>';
+      }
+    })();
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
