@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    const prefix = '/AuthSample';
+    const pathname = location.pathname;
+    const search = location.search || '';
+    const hash = location.hash || '';
+
+    // Remove repeating /index.html if already present
+    const cleanPath = pathname.replace(/\/index\.html/g, '').replace(prefix, '');
+
+    // Final target
+    const target = `${prefix}/index.html${cleanPath}${search}${hash}`;
+    window.location.replace(target);
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>

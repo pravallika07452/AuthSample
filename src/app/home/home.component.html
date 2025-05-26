@@ -1,0 +1,13 @@
+<div class="container d-flex align-items-center justify-content-center vh-100">
+  <div class="card text-center p-4 shadow-lg" style="width: 100%; max-width: 400px; border-radius: 20px;">
+    <h2 class="mb-4 text-primary">Welcome to Our App</h2>
+
+    <ng-container *ngIf="auth.isLoading$ | async" class="text-muted mb-3">
+      Loading...
+    </ng-container>
+
+    <ng-container *ngIf="!(auth.isAuthenticated$ | async) && !(auth.isLoading$ | async)">
+      <button (click)="login()" class="btn btn-primary btn-lg w-100 mb-3">Login</button>
+    </ng-container>
+  </div>
+</div>
